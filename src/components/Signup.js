@@ -20,7 +20,7 @@ const Signup = (props) => {
 
       const handleSubmit = async(e) => {
         e.preventDefault();
-         const response = await fetch('https://notes-next-backend.vercel.app/api/auth/createuser', {
+         const response = await fetch('http://notes-next-backend.vercel.app:/api/auth/createuser', {
                   
         // const response = await fetch('http://localhost:8999/api/auth/createuser', {
 
