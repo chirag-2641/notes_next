@@ -4,7 +4,7 @@ import NoteContext from "./noteContext";
 const NoteState = (props) => {
 
     const notesInitial = [];
-    const host = "http://localhost:5000";
+    const host = "'https://notes-next-backend.vercel.app";
     const [notes,setNotes] = useState(notesInitial);
 
     //fetching all the notes
