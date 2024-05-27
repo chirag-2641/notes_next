@@ -12,12 +12,12 @@ code {
     monospace;
 }
 
-#manku {
+/* #manku {
   display: flex;
   justify-content: space-around;
   padding: 1%;
   border: 1px black solid;
-}
+} */
 
 #loginbody {
   width: 40%;
@@ -34,7 +34,7 @@ code {
 }
 
 .login-form {
-  width: 110%;
+  /* width: 110%; */
   padding-top: 4%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: larger;

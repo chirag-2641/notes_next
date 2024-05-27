@@ -10,31 +10,28 @@ const Navbar = (props) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    props.showAlert("Logged Out succesfully! ", "info");
+    props.showAlert("Logged Out successfully!", "info");
     history.push("/login");
   };
 
   const handleClick1 = () => {
-    setTheme({ light: true, dark: false, anotherDark: false, darkTeal: false, rainbow:false });
-    //console.log("theme selected =  "+theme)
+    setTheme({ light: true, dark: false, anotherDark: false, darkTeal: false, rainbow: false });
   };
 
   const handleClick2 = () => {
-    setTheme({ light: false, dark: true, anotherDark: false, darkTeal: false, rainbow:false });
-    //console.log("theme selected =  "+theme)
+    setTheme({ light: false, dark: true, anotherDark: false, darkTeal: false, rainbow: false });
   };
 
   const handleClick3 = () => {
-    setTheme({ light: false, dark: false, anotherDark: true, darkTeal: false, rainbow:false });
-    //console.log("theme selected =  "+theme)
+    setTheme({ light: false, dark: false, anotherDark: true, darkTeal: false, rainbow: false });
   };
 
   const handleClick4 = () => {
-    setTheme({ light: false, dark: false, anotherDark: false, darkTeal: true, rainbow:false });
+    setTheme({ light: false, dark: false, anotherDark: false, darkTeal: true, rainbow: false });
   };
 
   const handleClick5 = () => {
-    setTheme({ light: false, dark: false, anotherDark: false, darkTeal: false, rainbow:true });
+    setTheme({ light: false, dark: false, anotherDark: false, darkTeal: false, rainbow: true });
   };
 
   let navbarStyle = {
@@ -42,18 +39,18 @@ const Navbar = (props) => {
   };
   let buttonStyle = {
     backgroundColor: "blue",
-    color:'white'
+    color: 'white'
   }
-  if(theme.dark) {
+  if (theme.dark) {
     buttonStyle = {
-      backgroundColor:'#0b0b6fdb',
-      color:'white'
+      backgroundColor: '#0b0b6fdb',
+      color: 'white'
     }
   }
-  else if(theme.anotherDark) {
+  else if (theme.anotherDark) {
     buttonStyle = {
-      backgroundColor:'#00C548',
-      color:'black'
+      backgroundColor: '#00C548',
+      color: 'black'
     }
   }
   else if (theme.darkTeal) {
@@ -61,26 +58,21 @@ const Navbar = (props) => {
       backgroundColor: "#02393e",
     };
     buttonStyle = {
-      backgroundColor:'#4F8AA7',
-      color:'white'
+      backgroundColor: '#4F8AA7',
+      color: 'white'
     }
   }
   else if (theme.rainbow) {
     buttonStyle = {
-      background:"linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)",
-      color:"black"
+      background: "linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red)",
+      color: "black"
     }
   }
 
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark bg-custom"
-      style={navbarStyle}
-    >
+    <nav className="navbar navbar-expand-lg navbar-dark bg-custom" style={navbarStyle}>
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Navbar
-        </Link>
+        <Link className="navbar-brand" to="/">Navbar</Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -95,79 +87,30 @@ const Navbar = (props) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  location.pathname === "/" ? "active" : ""
-                }`}
-                aria-current="page"
-                to="/"
-              >
-                Home
-              </Link>
+              <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  location.pathname === "/about" ? "active" : ""
-                }`}
-                to="/about"
-              >
-                About
-              </Link>
+              <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About</Link>
             </li>
             <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                id="navbarDropdown"
-                href="/#"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Themes
-              </a>
+              <a className="nav-link dropdown-toggle" id="navbarDropdown" href="/#" data-bs-toggle="dropdown" aria-expanded="false">Themes</a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <button className="dropdown-item" onClick={handleClick1}>
-                    Light
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" onClick={handleClick2}>
-                    Dark
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" onClick={handleClick3}>
-                    High Contrast
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" onClick={handleClick4}>
-                    Dark Teal
-                  </button>
-                </li>
-                <li>
-                  <button className="dropdown-item" onClick={handleClick5}>
-                    Rainbow
-                  </button>
-                </li>
+                <li><button className="dropdown-item" onClick={handleClick1}>Light</button></li>
+                <li><button className="dropdown-item" onClick={handleClick2}>Dark</button></li>
+                <li><button className="dropdown-item" onClick={handleClick3}>High Contrast</button></li>
+                <li><button className="dropdown-item" onClick={handleClick4}>Dark Teal</button></li>
+                <li><button className="dropdown-item" onClick={handleClick5}>Rainbow</button></li>
               </ul>
             </li>
           </ul>
 
           {!localStorage.getItem("token") ? (
             <form className="d-flex">
-              <Link className="btn btn-primary mx-2" to="/login" role="button">
-                Login
-              </Link>
-              <Link className="btn btn-primary mx-2" to="/signup" role="button">
-                SignUp
-              </Link>
+              <Link className="btn btn-primary mx-2" to="/login" role="button">Login</Link>
+              <Link className="btn btn-primary mx-2" to="/signup" role="button">SignUp</Link>
             </form>
           ) : (
-            <button className={`btn btn-custom mx-2`} style={buttonStyle} onClick={handleLogout}>
-              Logout
-            </button>
+            <button className={`btn btn-custom mx-2`} style={buttonStyle} onClick={handleLogout}>Logout</button>
           )}
         </div>
       </div>
